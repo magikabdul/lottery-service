@@ -21,32 +21,29 @@
         <java.version>17</java.version>
 
         <!--  plugins versions -->
-        <dependency-check-maven.version>8.3.1</dependency-check-maven.version>
+        <dependency-check-maven.version>8.4.0</dependency-check-maven.version>
         <maven-enforcer-plugin.version>3.3.0</maven-enforcer-plugin.version>
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
         <tidy-maven-plugin.version>1.2.0</tidy-maven-plugin.version>
         <versions-maven-plugin.version>2.16.0</versions-maven-plugin.version>
+        <git-commit-id-maven-plugin.version>6.0.0</git-commit-id-maven-plugin.version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>github</id>
-            <name>Github magikabdul Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/magikabdul/*</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <!--  internal dependencies -->
         <dependency>
             <groupId>cloud.cholewa</groupId>
             <artifactId>cholewa-commons</artifactId>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-tools</artifactId>
         </dependency>
 
         <dependency>
@@ -75,6 +72,14 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>Github magikabdul Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/magikabdul/*</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
@@ -161,6 +166,26 @@
                     <execution>
                         <goals>
                             <goal>display-property-updates</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>io.github.git-commit-id</groupId>
+                <artifactId>git-commit-id-maven-plugin</artifactId>
+                <version>${git-commit-id-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>get-the-git-infos</id>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>validate-the-git-infos</id>
+                        <goals>
+                            <goal>validateRevision</goal>
                         </goals>
                     </execution>
                 </executions>
