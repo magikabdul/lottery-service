@@ -21,8 +21,15 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: maven-settings
+        uses: s4u/maven-settings-action@v2.8.0
+        with:
+          servers: '[{"id": "github", "username": "magikabdul", "password": "${MAVEN_TOKEN_REF}"}]'
+
       - name: Build with Maven
         run: mvn -B package --file pom.xml
+        env:
+          MAVEN_TOKEN_REF: ${{ secrets.MAVEN_TOKEN }}
 
       - name: Discord notification -> success
         uses: sarisia/actions-status-discord@v1
