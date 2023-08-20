@@ -10,7 +10,7 @@
         <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>cloud-cholewa</groupId>
+    <groupId>cloud.cholewa</groupId>
     <artifactId>lottery-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
