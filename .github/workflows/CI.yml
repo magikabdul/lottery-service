@@ -20,6 +20,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+        run:
+          cat /home/runner/.m2/settings.xml
 
       - name: maven-settings
         uses: s4u/maven-settings-action@v2.8.0

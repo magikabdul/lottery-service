@@ -76,7 +76,6 @@
     <repositories>
         <repository>
             <id>github</id>
-            <name>Github magikabdul Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/magikabdul/*</url>
         </repository>
     </repositories>
