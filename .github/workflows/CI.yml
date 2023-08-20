@@ -31,6 +31,10 @@ jobs:
           servers: '[{"id": "github_1", "username": "dummy", "password": "${MAVEN_TOKEN_REF}"}]'
           githubServer: false
 
+      - name: debug2
+        run:
+          cat /home/runner/.m2/settings.xml
+
       - name: Build with Maven
         run: mvn -B package --file pom.xml
         env:
