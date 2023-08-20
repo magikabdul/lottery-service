@@ -20,6 +20,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+
+      - name: debug
         run:
           cat /home/runner/.m2/settings.xml
 
