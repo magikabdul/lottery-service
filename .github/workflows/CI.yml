@@ -24,7 +24,7 @@ jobs:
       - name: maven-settings
         uses: s4u/maven-settings-action@v2.8.0
         with:
-          servers: '[{"id": "github", "username": "magikabdul", "password": "${MAVEN_TOKEN_REF}"}]'
+          servers: '[{"id": "github_1", "username": "magikabdul", "password": "${MAVEN_TOKEN_REF}"}]'
 
       - name: Build with Maven
         run: mvn -B package --file pom.xml
