@@ -26,7 +26,7 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
         env:
-          GITHUB_TOKEN: ${{ secrets.MAVEN_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Discord notification -> success
         uses: sarisia/actions-status-discord@v1
