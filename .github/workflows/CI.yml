@@ -34,7 +34,7 @@ jobs:
       - name: debug2
         run: |
           cat /home/runner/.m2/settings.xml
-          echo ""
+          echo "--------------------"
           echo "value is: ${env.GITHUB_TOKEN}"
         env:
           MAVEN_TOKEN_REF: ${{ secrets.MAVEN_TOKEN }}
