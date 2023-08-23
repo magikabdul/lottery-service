@@ -24,24 +24,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: debug
-        run:
-          cat /home/runner/.m2/settings.xml
-
-#      - name: maven-settings
-#        uses: s4u/maven-settings-action@v2.8.0
-#        with:
-#          servers: '[{"id": "github_1", "username": "dummy", "password": "${MAVEN_TOKEN_REF}"}]'
-#          githubServer: false
-#
-#      - name: debug2
-#        run: |
-#          cat /home/runner/.m2/settings.xml
-#          echo "--------------------"
-#          echo "value is: $MAVEN_TOKEN_REF"
-#        env:
-#          MAVEN_TOKEN_REF: ${{ secrets.MAVEN_TOKEN }}
-
       - name: Build with Maven
         run: mvn -B package --file pom.xml
         env:
