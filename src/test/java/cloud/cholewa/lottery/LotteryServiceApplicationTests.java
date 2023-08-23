@@ -1,4 +1,4 @@
-package cloudcholewa.lottery;
+package cloud.cholewa.lottery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
